@@ -59,3 +59,7 @@ button:active {
 #equals {
   grid-column: span 2;
 }
+
+#backspace {
+  grid-column: span 2;
+}

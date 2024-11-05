@@ -103,4 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
       display.textContent = currentInput
     }
   })
+
+  document.querySelector('#backspace').addEventListener('click', () => {
+    currentInput = currentInput.slice(0, -1)
+    display.textContent = currentInput || '0'
+  })
 })
