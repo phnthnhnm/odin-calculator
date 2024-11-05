@@ -54,12 +54,34 @@ button:active {
 
 #clear {
   grid-column: span 2;
+  background-color: var(--ctp-mocha-red);
+}
+
+#clear:hover {
+  background-color: var(--ctp-mocha-maroon);
+}
+
+#clear:active {
+  background-color: var(--ctp-mocha-surface2);
 }
 
 #equals {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 #backspace {
   grid-column: span 2;
+  background-color: var(--ctp-mocha-blue);
+}
+
+#backspace:hover {
+  background-color: var(--ctp-mocha-sky);
+}
+
+#backspace:active {
+  background-color: var(--ctp-mocha-surface2);
+}
+
+#decimal {
+  grid-column: span 1;
 }
