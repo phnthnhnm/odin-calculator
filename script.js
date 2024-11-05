@@ -26,9 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentInput = ''
   let operator = null
   let firstOperand = null
+  let shouldResetInput = false
 
   document.querySelectorAll('.number').forEach((button) => {
     button.addEventListener('click', () => {
+      if (shouldResetInput) {
+        currentInput = ''
+        shouldResetInput = false
+      }
       currentInput += button.textContent
       display.textContent = currentInput
     })
@@ -38,9 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       if (firstOperand === null) {
         firstOperand = parseFloat(currentInput)
-        operator = button.textContent
-        currentInput = ''
-      } else {
+      } else if (currentInput !== '') {
         const secondOperand = parseFloat(currentInput)
         let result
         switch (operator) {
@@ -59,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         firstOperand = roundResult(result)
         display.textContent = firstOperand
-        operator = button.textContent
-        currentInput = ''
       }
+      operator = button.textContent
+      shouldResetInput = true
     })
   })
 
@@ -84,9 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
           break
       }
       display.textContent = roundResult(result)
-      firstOperand = null
+      firstOperand = roundResult(result)
       operator = null
       currentInput = ''
+      shouldResetInput = true
     }
   })
 
