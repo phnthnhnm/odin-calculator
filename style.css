@@ -1,1 +1,61 @@
 @import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--ctp-mocha-base);
+  font-family: Arial, sans-serif;
+}
+
+#calculator {
+  background-color: var(--ctp-mocha-mantle);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+#display {
+  background-color: var(--ctp-mocha-crust);
+  color: var(--ctp-mocha-text);
+  font-size: 2em;
+  padding: 10px;
+  text-align: right;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  background-color: var(--ctp-mocha-green);
+  border: none;
+  border-radius: 5px;
+  color: var(--ctp-text);
+  font-size: 1.5em;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--ctp-mocha-blue);
+}
+
+button:active {
+  background-color: var(--ctp-mocha-surface2);
+}
+
+#clear {
+  grid-column: span 2;
+}
+
+#equals {
+  grid-column: span 2;
+}
