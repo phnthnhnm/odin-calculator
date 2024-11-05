@@ -88,4 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
     operator = null
     display.textContent = '0'
   })
+
+  document.querySelector('#decimal').addEventListener('click', () => {
+    if (!currentInput.includes('.')) {
+      currentInput += '.'
+      display.textContent = currentInput
+    }
+  })
 })
