@@ -17,6 +17,10 @@ function divide(a, b) {
   return a / b
 }
 
+function roundResult(result) {
+  return Math.round(result * 10000) / 10000
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const display = document.querySelector('#display')
   let currentInput = ''
@@ -38,20 +42,22 @@ document.addEventListener('DOMContentLoaded', () => {
         currentInput = ''
       } else {
         const secondOperand = parseFloat(currentInput)
+        let result
         switch (operator) {
           case '+':
-            firstOperand = add(firstOperand, secondOperand)
+            result = add(firstOperand, secondOperand)
             break
           case '-':
-            firstOperand = subtract(firstOperand, secondOperand)
+            result = subtract(firstOperand, secondOperand)
             break
           case '*':
-            firstOperand = multiply(firstOperand, secondOperand)
+            result = multiply(firstOperand, secondOperand)
             break
           case '/':
-            firstOperand = divide(firstOperand, secondOperand)
+            result = divide(firstOperand, secondOperand)
             break
         }
+        firstOperand = roundResult(result)
         display.textContent = firstOperand
         operator = button.textContent
         currentInput = ''
@@ -62,20 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#equals').addEventListener('click', () => {
     if (firstOperand !== null && operator !== null) {
       const secondOperand = parseFloat(currentInput)
+      let result
       switch (operator) {
         case '+':
-          display.textContent = add(firstOperand, secondOperand)
+          result = add(firstOperand, secondOperand)
           break
         case '-':
-          display.textContent = subtract(firstOperand, secondOperand)
+          result = subtract(firstOperand, secondOperand)
           break
         case '*':
-          display.textContent = multiply(firstOperand, secondOperand)
+          result = multiply(firstOperand, secondOperand)
           break
         case '/':
-          display.textContent = divide(firstOperand, secondOperand)
+          result = divide(firstOperand, secondOperand)
           break
       }
+      display.textContent = roundResult(result)
       firstOperand = null
       operator = null
       currentInput = ''
