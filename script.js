@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   document.querySelector('#equals').addEventListener('click', () => {
-    if (firstOperand !== null && operator !== null) {
+    if (firstOperand !== null && operator !== null && currentInput !== '') {
       const secondOperand = parseFloat(currentInput)
       let result
       switch (operator) {
