@@ -23,6 +23,7 @@ function roundResult(result) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const display = document.querySelector('#display')
+  const previousOperation = document.querySelector('#previous-operation')
   let currentInput = ''
   let operator = null
   let firstOperand = null
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display.textContent = firstOperand
       }
       operator = button.textContent
+      previousOperation.textContent = `${firstOperand} ${operator}`
       shouldResetInput = true
     })
   })
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
           break
       }
       display.textContent = roundResult(result)
+      previousOperation.textContent = `${firstOperand} ${operator} ${secondOperand} =`
       firstOperand = roundResult(result)
       operator = null
       currentInput = ''
@@ -99,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     firstOperand = null
     operator = null
     display.textContent = '0'
+    previousOperation.textContent = ''
   })
 
   document.querySelector('#decimal').addEventListener('click', () => {

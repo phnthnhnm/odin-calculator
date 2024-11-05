@@ -27,6 +27,13 @@ body {
   margin-bottom: 10px;
 }
 
+#previous-operation {
+  color: var(--ctp-mocha-subtext0);
+  font-size: 1em;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
