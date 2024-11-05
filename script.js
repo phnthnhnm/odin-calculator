@@ -22,7 +22,7 @@ function roundResult(result) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const display = document.querySelector('#display')
+  const display = document.querySelector('#current-result')
   const previousOperation = document.querySelector('#previous-operation')
   let currentInput = ''
   let operator = null

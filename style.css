@@ -25,13 +25,22 @@ body {
   text-align: right;
   border-radius: 5px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px; /* Adjust height to fit both previous operation and current result */
 }
 
 #previous-operation {
   color: var(--ctp-mocha-subtext0);
-  font-size: 1em;
+  font-size: 0.5em; /* Adjust font size to fit within the display */
   text-align: right;
   margin-bottom: 5px;
+}
+
+#current-result {
+  font-size: 1.5em; /* Adjust font size to fit within the display */
+  text-align: right;
 }
 
 .buttons {
