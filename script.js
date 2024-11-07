@@ -116,4 +116,29 @@ document.addEventListener('DOMContentLoaded', () => {
     currentInput = currentInput.slice(0, -1)
     display.textContent = currentInput || '0'
   })
+
+  document.addEventListener('keydown', (event) => {
+    const key = event.key
+    if (!isNaN(key)) {
+      document.querySelectorAll('.number').forEach((button) => {
+        if (button.textContent === key) {
+          button.click()
+        }
+      })
+    } else if (key === '.') {
+      document.querySelector('#decimal').click()
+    } else if (key === 'Enter' || key === '=') {
+      document.querySelector('#equals').click()
+    } else if (key === 'Backspace') {
+      document.querySelector('#backspace').click()
+    } else if (key === 'Escape') {
+      document.querySelector('#clear').click()
+    } else if (['+', '-', '*', '/'].includes(key)) {
+      document.querySelectorAll('.operator').forEach((button) => {
+        if (button.textContent === key) {
+          button.click()
+        }
+      })
+    }
+  })
 })
