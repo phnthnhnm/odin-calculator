@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let operator = null
   let firstOperand = null
   let shouldResetInput = false
+  const maxDisplayLength = 10
 
   document.querySelectorAll('.number').forEach((button) => {
     button.addEventListener('click', () => {
@@ -35,8 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         currentInput = ''
         shouldResetInput = false
       }
-      currentInput += button.textContent
-      display.textContent = currentInput
+      if (currentInput.length < maxDisplayLength) {
+        currentInput += button.textContent
+        display.textContent = currentInput
+      }
     })
   })
 
